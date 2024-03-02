@@ -1,0 +1,700 @@
+const DB = {
+  pathOfExes: [
+    {
+      value: "992",
+      text: "  Ассоциации, СМИ и научно-исследовательские учреждения",
+    },
+    { value: "984", text: "  Готовая упаковка и этикетка" },
+    {
+      value: "979",
+      text: "  Ингредиенты и закваски для молочных продуктов, напитков",
+    },
+    { value: "983", text: "  Маркировочное оборудование" },
+    { value: "988", text: "  Оборудование для контроля качества" },
+    { value: "977", text: "  Оборудование для приемки молока" },
+    {
+      value: "978",
+      text: "  Оборудование и технологии для переработки молока",
+    },
+    {
+      value: "980",
+      text: "   Оборудование и технологии для производства мороженого ",
+    },
+    { value: "985", text: "  Оборудование и технологии для розлива" },
+    { value: "989", text: "  Очистительное и санитарное оборудование" },
+    {
+      value: "986",
+      text: "   Программы (ПО) и средства автоматизации производства",
+    },
+    { value: "990", text: "  Сервис и инжиниринг для пищевых производств" },
+    {
+      value: "987",
+      text: "   Сопутствующее оборудование и продукция, комплектующие",
+    },
+    { value: "991", text: "  Сопутствующие услуги" },
+    { value: "982", text: "  Упаковочное оборудование и технологии" },
+    { value: "981", text: "  Холодильное и морозильное оборудование" },
+  ],
+  routes1: [
+    { title: "Имя", type: "text", placeholder: "Утка" },
+    { title: "Фамилия", type: "text", placeholder: "Уткин" },
+    {
+      title: "Название должности",
+      type: "text",
+      placeholder: "Главная утка",
+    },
+
+    { title: "E-mail рабочий", type: "email", placeholder: "" },
+    { title: "Название организации", type: "text", placeholder: "" },
+    { title: "Сайт организации", type: "url", placeholder: "" },
+
+    { title: "Страна", type: "text", placeholder: "" },
+    { title: "Раздел выставки", type: "text", placeholder: "" },
+
+    {
+      title: "Желаемая площадь стенда (кв. м)",
+      type: "number",
+      placeholder: "",
+    },
+    ,
+  ],
+  options: [
+    {
+      value: "533",
+      text: "Администрация / Операционное управление / Производство",
+    },
+    { value: "547", text: "Взаимодействием с госудастрвенными структурами" },
+    { value: "541", text: "Дизайн" },
+    { value: "554", text: "Другое " },
+    { value: "558", text: "Закупки" },
+    { value: "537", text: "Категорийный менеджмент" },
+    { value: "538", text: "Клиентский сервис" },
+    { value: "539", text: "Консалтинг" },
+    { value: "540", text: "Креативный менеджмент" },
+    { value: "548", text: "Лицензирование" },
+    { value: "553", text: "Логистика" },
+    { value: "549", text: "Маркетинг" },
+    { value: "531", text: "Менеджер по работе с клиентами" },
+    { value: "551", text: "Мерчандайзинг" },
+    { value: "546", text: "Общее управление" },
+    { value: "543", text: "Организация мероприятий" },
+    { value: "550", text: "Представитель СМИ" },
+    { value: "559", text: "Продажи и развитие бизнеса" },
+    { value: "536", text: "Руководство компанией/департаментом" },
+    { value: "560", text: "Техническая поддержка" },
+    { value: "542", text: "Управление дистрибуцией" },
+    { value: "556", text: "Управление продуктом" },
+    { value: "544", text: "Управление экспортом" },
+    { value: "545", text: "Финансы" },
+  ],
+  phones: [
+    {
+      name: "russian",
+      emoji: "🇷🇺",
+      prefix: "+7",
+      russianCountryName: "Россия",
+    },
+    {
+      name: "english",
+      emoji: "🇬🇧",
+      prefix: "+44",
+      russianCountryName: "Великобритания",
+    },
+    {
+      name: "spanish",
+      emoji: "🇪🇸",
+      prefix: "+34",
+      russianCountryName: "Испания",
+    },
+    {
+      name: "estonian",
+      emoji: "🇪🇪",
+      prefix: "+372",
+      russianCountryName: "Эстония",
+    },
+    { name: "thai", emoji: "🇹🇭", prefix: "+66", russianCountryName: "Таиланд" },
+    {
+      name: "zulu",
+      emoji: "🇿🇦",
+      prefix: "+27",
+      russianCountryName: "Южно-Африканская Республика",
+    },
+    {
+      name: "korean",
+      emoji: "🇰🇷",
+      prefix: "+82",
+      russianCountryName: "Южная Корея",
+    },
+    {
+      name: "bangla",
+      emoji: "🇧🇩",
+      prefix: "+880",
+      russianCountryName: "Бангладеш",
+    },
+    {
+      name: "portuguese",
+      emoji: "🇵🇹",
+      prefix: "+351",
+      russianCountryName: "Португалия",
+    },
+    {
+      name: "hebrew",
+      emoji: "🇮🇱",
+      prefix: "+972",
+      russianCountryName: "Израиль",
+    },
+    {
+      name: "catalan",
+      emoji: "🇨🇦",
+      prefix: "+1",
+      russianCountryName: "Канада",
+    },
+    {
+      name: "kannada",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    {
+      name: "chinese",
+      emoji: "🇨🇳",
+      prefix: "+86",
+      russianCountryName: "Китай",
+    },
+    {
+      name: "javanese",
+      emoji: "🇮🇩",
+      prefix: "+62",
+      russianCountryName: "Индонезия",
+    },
+    { name: "tamil", emoji: "🇮🇳", prefix: "+91", russianCountryName: "Индия" },
+    {
+      name: "sundanese",
+      emoji: "🇮🇩",
+      prefix: "+62",
+      russianCountryName: "Индонезия",
+    },
+    {
+      name: "german",
+      emoji: "🇩🇪",
+      prefix: "+49",
+      russianCountryName: "Германия",
+    },
+    {
+      name: "swedish",
+      emoji: "🇸🇪",
+      prefix: "+46",
+      russianCountryName: "Швеция",
+    },
+    {
+      name: "malayalam",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    {
+      name: "arabic",
+      emoji: "🇸🇦",
+      prefix: "+966",
+      russianCountryName: "Саудовская Аравия",
+    },
+    {
+      name: "french",
+      emoji: "🇫🇷",
+      prefix: "+33",
+      russianCountryName: "Франция",
+    },
+    {
+      name: "vietnamese",
+      emoji: "🇻🇳",
+      prefix: "+84",
+      russianCountryName: "Вьетнам",
+    },
+    {
+      name: "croatian",
+      emoji: "🇭🇷",
+      prefix: "+385",
+      russianCountryName: "Хорватия",
+    },
+    { name: "danish", emoji: "🇩🇰", prefix: "+45", russianCountryName: "Дания" },
+    {
+      name: "finnish",
+      emoji: "🇫🇮",
+      prefix: "+358",
+      russianCountryName: "Финляндия",
+    },
+    { name: "hindi", emoji: "🇮🇳", prefix: "+91", russianCountryName: "Индия" },
+    {
+      name: "polish",
+      emoji: "🇵🇱",
+      prefix: "+48",
+      russianCountryName: "Польша",
+    },
+    {
+      name: "turkish",
+      emoji: "🇹🇷",
+      prefix: "+90",
+      russianCountryName: "Турция",
+    },
+    {
+      name: "japanese",
+      emoji: "🇯🇵",
+      prefix: "+81",
+      russianCountryName: "Япония",
+    },
+    {
+      name: "norwegian",
+      emoji: "🇳🇴",
+      prefix: "+47",
+      russianCountryName: "Норвегия",
+    },
+    {
+      name: "italian",
+      emoji: "🇮🇹",
+      prefix: "+39",
+      russianCountryName: "Италия",
+    },
+    { name: "greek", emoji: "🇬🇷", prefix: "+30", russianCountryName: "Греция" },
+    {
+      name: "bulgarian",
+      emoji: "🇧🇬",
+      prefix: "+359",
+      russianCountryName: "Болгария",
+    },
+    { name: "czech", emoji: "🇨🇿", prefix: "+420", russianCountryName: "Чехия" },
+    {
+      name: "slovak",
+      emoji: "🇸🇰",
+      prefix: "+421",
+      russianCountryName: "Словакия",
+    },
+    {
+      name: "latvian",
+      emoji: "🇱🇻",
+      prefix: "+371",
+      russianCountryName: "Латвия",
+    },
+    {
+      name: "romanian",
+      emoji: "🇷🇴",
+      prefix: "+40",
+      russianCountryName: "Румыния",
+    },
+    {
+      name: "slovene",
+      emoji: "🇸🇮",
+      prefix: "+386",
+      russianCountryName: "Словения",
+    },
+    {
+      name: "ukrainian",
+      emoji: "🇺🇦",
+      prefix: "+380",
+      russianCountryName: "Украина",
+    },
+    {
+      name: "lithuanian",
+      emoji: "🇱🇹",
+      prefix: "+370",
+      russianCountryName: "Литва",
+    },
+    {
+      name: "dutch",
+      emoji: "🇳🇱",
+      prefix: "+31",
+      russianCountryName: "Нидерланды",
+    },
+    {
+      name: "bahasa",
+      emoji: "🇮🇩",
+      prefix: "+62",
+      russianCountryName: "Индонезия",
+    },
+    {
+      name: "malay",
+      emoji: "🇲🇾",
+      prefix: "+60",
+      russianCountryName: "Малайзия",
+    },
+    {
+      name: "gujarati",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    { name: "telugu", emoji: "🇮🇳", prefix: "+91", russianCountryName: "Индия" },
+    {
+      name: "marathi",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    {
+      name: "swahili",
+      emoji: "🇰🇪",
+      prefix: "+254",
+      russianCountryName: "Кения",
+    },
+    {
+      name: "urdu",
+      emoji: "🇵🇰",
+      prefix: "+92",
+      russianCountryName: "Пакистан",
+    },
+    { name: "welsh", emoji: "🏴", prefix: "+44", russianCountryName: "Уэльс" },
+    {
+      name: "hungarian",
+      emoji: "🇭🇺",
+      prefix: "+36",
+      russianCountryName: "Венгрия",
+    },
+    {
+      name: "irish",
+      emoji: "🇮🇪",
+      prefix: "+353",
+      russianCountryName: "Ирландия",
+    },
+    { name: "persian", emoji: "🇮🇷", prefix: "+98", russianCountryName: "Иран" },
+    {
+      name: "afrikaans",
+      emoji: "🇿🇦",
+      prefix: "+27",
+      russianCountryName: "Южная Африка",
+    },
+    {
+      name: "filipino",
+      emoji: "🇵🇭",
+      prefix: "+63",
+      russianCountryName: "Филиппины",
+    },
+  ].map((x) => ({
+    value: x.title,
+    text: x.prefix + x.emoji,
+    russianCountryName: x.russianCountryName,
+  })),
+
+  countries: [
+    {
+      name: "russian",
+      emoji: "🇷🇺",
+      prefix: "+7",
+      russianCountryName: "Россия",
+    },
+    {
+      name: "english",
+      emoji: "🇬🇧",
+      prefix: "+44",
+      russianCountryName: "Великобритания",
+    },
+    {
+      name: "spanish",
+      emoji: "🇪🇸",
+      prefix: "+34",
+      russianCountryName: "Испания",
+    },
+    {
+      name: "estonian",
+      emoji: "🇪🇪",
+      prefix: "+372",
+      russianCountryName: "Эстония",
+    },
+    { name: "thai", emoji: "🇹🇭", prefix: "+66", russianCountryName: "Таиланд" },
+    {
+      name: "zulu",
+      emoji: "🇿🇦",
+      prefix: "+27",
+      russianCountryName: "Южно-Африканская Республика",
+    },
+    {
+      name: "korean",
+      emoji: "🇰🇷",
+      prefix: "+82",
+      russianCountryName: "Южная Корея",
+    },
+    {
+      name: "bangla",
+      emoji: "🇧🇩",
+      prefix: "+880",
+      russianCountryName: "Бангладеш",
+    },
+    {
+      name: "portuguese",
+      emoji: "🇵🇹",
+      prefix: "+351",
+      russianCountryName: "Португалия",
+    },
+    {
+      name: "hebrew",
+      emoji: "🇮🇱",
+      prefix: "+972",
+      russianCountryName: "Израиль",
+    },
+    {
+      name: "catalan",
+      emoji: "🇨🇦",
+      prefix: "+1",
+      russianCountryName: "Канада",
+    },
+    {
+      name: "kannada",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    {
+      name: "chinese",
+      emoji: "🇨🇳",
+      prefix: "+86",
+      russianCountryName: "Китай",
+    },
+    {
+      name: "javanese",
+      emoji: "🇮🇩",
+      prefix: "+62",
+      russianCountryName: "Индонезия",
+    },
+    { name: "tamil", emoji: "🇮🇳", prefix: "+91", russianCountryName: "Индия" },
+    {
+      name: "sundanese",
+      emoji: "🇮🇩",
+      prefix: "+62",
+      russianCountryName: "Индонезия",
+    },
+    {
+      name: "german",
+      emoji: "🇩🇪",
+      prefix: "+49",
+      russianCountryName: "Германия",
+    },
+    {
+      name: "swedish",
+      emoji: "🇸🇪",
+      prefix: "+46",
+      russianCountryName: "Швеция",
+    },
+    {
+      name: "malayalam",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    {
+      name: "arabic",
+      emoji: "🇸🇦",
+      prefix: "+966",
+      russianCountryName: "Саудовская Аравия",
+    },
+    {
+      name: "french",
+      emoji: "🇫🇷",
+      prefix: "+33",
+      russianCountryName: "Франция",
+    },
+    {
+      name: "vietnamese",
+      emoji: "🇻🇳",
+      prefix: "+84",
+      russianCountryName: "Вьетнам",
+    },
+    {
+      name: "croatian",
+      emoji: "🇭🇷",
+      prefix: "+385",
+      russianCountryName: "Хорватия",
+    },
+    { name: "danish", emoji: "🇩🇰", prefix: "+45", russianCountryName: "Дания" },
+    {
+      name: "finnish",
+      emoji: "🇫🇮",
+      prefix: "+358",
+      russianCountryName: "Финляндия",
+    },
+    { name: "hindi", emoji: "🇮🇳", prefix: "+91", russianCountryName: "Индия" },
+    {
+      name: "polish",
+      emoji: "🇵🇱",
+      prefix: "+48",
+      russianCountryName: "Польша",
+    },
+    {
+      name: "turkish",
+      emoji: "🇹🇷",
+      prefix: "+90",
+      russianCountryName: "Турция",
+    },
+    {
+      name: "japanese",
+      emoji: "🇯🇵",
+      prefix: "+81",
+      russianCountryName: "Япония",
+    },
+    {
+      name: "norwegian",
+      emoji: "🇳🇴",
+      prefix: "+47",
+      russianCountryName: "Норвегия",
+    },
+    {
+      name: "italian",
+      emoji: "🇮🇹",
+      prefix: "+39",
+      russianCountryName: "Италия",
+    },
+    { name: "greek", emoji: "🇬🇷", prefix: "+30", russianCountryName: "Греция" },
+    {
+      name: "bulgarian",
+      emoji: "🇧🇬",
+      prefix: "+359",
+      russianCountryName: "Болгария",
+    },
+    { name: "czech", emoji: "🇨🇿", prefix: "+420", russianCountryName: "Чехия" },
+    {
+      name: "slovak",
+      emoji: "🇸🇰",
+      prefix: "+421",
+      russianCountryName: "Словакия",
+    },
+    {
+      name: "latvian",
+      emoji: "🇱🇻",
+      prefix: "+371",
+      russianCountryName: "Латвия",
+    },
+    {
+      name: "romanian",
+      emoji: "🇷🇴",
+      prefix: "+40",
+      russianCountryName: "Румыния",
+    },
+    {
+      name: "slovene",
+      emoji: "🇸🇮",
+      prefix: "+386",
+      russianCountryName: "Словения",
+    },
+    {
+      name: "ukrainian",
+      emoji: "🇺🇦",
+      prefix: "+380",
+      russianCountryName: "Украина",
+    },
+    {
+      name: "lithuanian",
+      emoji: "🇱🇹",
+      prefix: "+370",
+      russianCountryName: "Литва",
+    },
+    {
+      name: "dutch",
+      emoji: "🇳🇱",
+      prefix: "+31",
+      russianCountryName: "Нидерланды",
+    },
+    {
+      name: "bahasa",
+      emoji: "🇮🇩",
+      prefix: "+62",
+      russianCountryName: "Индонезия",
+    },
+    {
+      name: "malay",
+      emoji: "🇲🇾",
+      prefix: "+60",
+      russianCountryName: "Малайзия",
+    },
+    {
+      name: "gujarati",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    { name: "telugu", emoji: "🇮🇳", prefix: "+91", russianCountryName: "Индия" },
+    {
+      name: "marathi",
+      emoji: "🇮🇳",
+      prefix: "+91",
+      russianCountryName: "Индия",
+    },
+    {
+      name: "swahili",
+      emoji: "🇰🇪",
+      prefix: "+254",
+      russianCountryName: "Кения",
+    },
+    {
+      name: "urdu",
+      emoji: "🇵🇰",
+      prefix: "+92",
+      russianCountryName: "Пакистан",
+    },
+    { name: "welsh", emoji: "🏴", prefix: "+44", russianCountryName: "Уэльс" },
+    {
+      name: "hungarian",
+      emoji: "🇭🇺",
+      prefix: "+36",
+      russianCountryName: "Венгрия",
+    },
+    {
+      name: "irish",
+      emoji: "🇮🇪",
+      prefix: "+353",
+      russianCountryName: "Ирландия",
+    },
+    { name: "persian", emoji: "🇮🇷", prefix: "+98", russianCountryName: "Иран" },
+    {
+      name: "afrikaans",
+      emoji: "🇿🇦",
+      prefix: "+27",
+      russianCountryName: "Южная Африка",
+    },
+    {
+      name: "filipino",
+      emoji: "🇵🇭",
+      prefix: "+63",
+      russianCountryName: "Филиппины",
+    },
+  ].map((x) => ({
+    text: x.russianCountryName,
+    value: x.russianCountryName,
+  })),
+
+  checkBox: [
+    {
+      title: `Я хочу оставаться в курсе информации о выставках, организуемых ООО "АйТиИ Экспо Интернешнл", и узнавать первым о продажах выставочных стендов, мероприятиях деловой программы, рекламных и спонсорских возможностях и даю свое согласие на получение информации рекламного характера и других актуальных для участников сведениях любыми способами (по электронной почте, с помощью смс, через сообщения в мессенджерах и пр.). От получения такой информации я могу отказаться в любое время."`,
+      type: "checkbox",
+      id: 1,
+    },
+    {
+      title: (
+        <>
+          {" "}
+          Настоящим я даю ООО «АйТиИ Экспо Интернешнл» (далее – «Общество») свое
+          согласие на автоматизированную, неавтоматизированную и смешанную
+          обработку, в том числе сбор, запись, систематизацию, накопление,
+          хранение, уточнение (обновление, изменение), извлечение,
+          использование, передачу (распространение, предоставление, доступ),
+          обезличивание, блокирование и уничтожение моих персональных данных,
+          передаваемых мною (ФИО, место работы, должность, телефон, адрес
+          электронной почты и пр.), с целью обеспечения моего участия в выставке
+          DairyTech, получения обратной связи, направления мне информационных
+          материалов, обеспечения моего общения с участниками и посетителями
+          выставки. Подтверждаю, что ознакомлен и согласен с (1)
+          <a href="https://www.ite.group/ru/privacy/" className="text-blue-500">
+            Политикой обработки и обеспечения безопасности персональных данных
+          </a>
+          (2) и
+          <a
+            href="https://dairytech-expo.ru/ru/visit/pravila-posescheniya/"
+            className="text-blue-500"
+          >
+            "Правилами посещения мероприятий, организуемых ООО «АйТиИ Экспо
+            Интернешнл».
+          </a>
+        </>
+      ),
+      type: "checkbox",
+      id: 2,
+    },
+  ],
+};
+export default DB;
